@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <style>
+    .table {
+      width: 100%;
+      border-collapse: collapse;
+    }
+    .table th, .table td {
+      border: 1px solid #ddd;
+      padding: 8px;
+      text-align: left;
+      vertical-align: top;
+    }
+  </style>
+    <title>Quests</title>
+</head>
+<body>
+<form>
+  Вернуться на  <a href="welcome">главную</a>
+</form>
+<br><br>
+<table class = table>
+  <thead>
+  <td>Title</td>
+  <td>Text</td>
+  <td>PersonID</td>
+  <td>Reward</td>
+  <td>Penalty</td>
+  <td>Time of started</td>
+  <td>Time for quest in min</td>
+  <td>Place id</td>
+  <td>Model id</td>
+  <td>Level difficulty</td>
+  <td>Quest status</td>
+  <td>Quest id</td>
+  </thead>
+  <tbody class = table-cell>
+  <tr th:each="quest : ${quests}">
+    <td th:text = "${quest.questTitle}"></td>
+    <td th:text ="${quest.questText}"></td>
+    <td th:text ="${quest.personId}"></td>
+    <td th:text ="${quest.reward}"></td>
+    <td th:text ="${quest.penalty}"></td>
+    <td th:text ="${quest.timeOfStarted}"></td>
+    <td th:text ="${quest.timeForQuestInMinutes}"></td>
+    <td th:text ="${quest.placeId}"></td>
+    <td th:text ="${quest.modelId}"></td>
+    <td th:text ="${quest.levelDifficulty}"></td>
+    <td th:text ="${quest.questStatus}"></td>
+    <td th:text ="${quest.id}"></td>
+  </tr>
+  </tbody>
+</table>
+</body>
+</html>
